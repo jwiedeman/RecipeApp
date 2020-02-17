@@ -1,10 +1,24 @@
 extends ../layout
 
 block content
-  .pb-2.mt-2.mb-4.border-bottom
+  .offset-md-3.px-2.mt-5.mb-4
     h3 Sign up
+
+  .form-group
+          .offset-md-3.col-md-7.pl-2
+            br
+            br
+            label.col-form-label.font-weight-bold.text-right Easier & more secure
+            a.btn.btn-block.btn-google.btn-social(href='/auth/google')
+              i.fab.fa-google-plus-g.fa-xs
+              | Sign in with Google
+            br
+            hr
   form(id='signup-form', method='POST')
+    .form-group.row.offset-md-3
+        label.col-form-label.font-weight-bold.text-right.pl-2 Create an account
     input(type='hidden', name='_csrf', value=_csrf)
+    
     .form-group.row
       label.col-md-3.col-form-label.font-weight-bold.text-right(for='email') Email
       .col-md-7
@@ -21,3 +35,5 @@ block content
       button.btn.btn-success(type='submit')
         i.fas.fa-user-plus.fa-sm
         | Signup
+
+    
