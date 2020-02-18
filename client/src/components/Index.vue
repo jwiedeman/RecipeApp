@@ -1,7 +1,7 @@
 <template>
     <div class='p-5' :key="componentKey">
     
-        <h1>ecipes</h1>
+        <h1>Recipes</h1>
        
         <br />
 

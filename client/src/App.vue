@@ -1,45 +1,31 @@
 // App.vue
 
 <template>
-  <div class="">
-    <nav class=" navbar-expand-sm navbar navbar-dark ">
-      <ul class="navbar-nav">
-        <li class=" ">
-          <router-link to="/" class="nav-link text-light bg-dark mr-2">DB Items</router-link>
-        </li>
-        <li class="">
-          <router-link to="/create" class="nav-link text-light bg-dark mr-2">Create Item</router-link>
-        </li>
-        
-      </ul>
-    </nav><br />
-    <transition 
-      name="fade"
-      mode="out-in"
-      @beforeLeave="beforeLeave"
-      @enter="enter"
-      @afterEnter="afterEnter"
-    >
-      <router-view></router-view>
-    </transition>
-  </div>
+<div>
+<Nav/>
+<router-view></router-view>
+<Footer/>
+</div> 
 </template>
 
 <style>
-    .fade-enter-active, .fade-leave-active {
-  transition-property: opacity;
-  transition-duration: .15s;
+html {
+  height: 100%;
 }
-
-.fade-enter, .fade-leave-active {
-  opacity: 0
+body {
+  min-height: 100vh;
 }
 </style>
 
 <script>
-
-    export default {
+  import Nav from "./components/Nav.vue"
+  import Footer from "./components/Footer.vue"
+  export default {
   name: 'App',
+  components:{
+    Nav:Nav,
+    Footer:Footer
+  },
   data() {
     return {
       prevHeight: 0,
